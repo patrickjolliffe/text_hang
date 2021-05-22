@@ -5,3 +5,5 @@ create table tt (tc varchar(255));
 create index ti on tt(tc) indextype is ctxsys.ctxcat;
 
 select null from  tt where catsearch(tc, '"' , null) > 0;
+
+--Hangs and never releases UL lock even after killing session
